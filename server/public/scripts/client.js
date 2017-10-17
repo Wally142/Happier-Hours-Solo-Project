@@ -31,6 +31,15 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
+    .when('/admin', {
+      templateUrl: '/views/templates/admin.html',
+      controller: 'UserController as uc',
+      resolve : {
+        getuser: function(UserService){
+          return UserService.getuser();
+        }
+      }
+    })
     .otherwise({
       redirectTo: 'home'
     });

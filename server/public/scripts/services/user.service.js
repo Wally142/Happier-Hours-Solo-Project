@@ -26,6 +26,15 @@ myApp.service('UserService', function($http, $location){
         $location.path("/home");
       });
     }
+
+    self.getHappy = function (){
+      console.log('In getHappy');
+      $http.get('/user/happy').then(function(response){
+        console.log(response);
+      })
+    }
+
+
   });
 
 
