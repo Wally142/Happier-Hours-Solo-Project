@@ -11,7 +11,6 @@
 -- 	"Time" varchar (20),
 -- 	Specials varchar (300),
 -- 	"Comments" varchar (500),
--- 	user_id int REFERENCES users (id)
 -- 	);
 
 -- CREATE TABLE comments (

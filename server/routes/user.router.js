@@ -48,7 +48,31 @@ router.get('/happy', function (req, res) {
       });
     }
   });
-});
+}); //end get
 
+router.post('/happy', function (req, res) {
+  console.log('in router post', req.body);
+  var bar = req.body;
+  pool.connect(function (error, client, done) {
+    if (error) {
+      console.log(error);
+      res.sendStatus(404);
+    } else {
+      var queryString = 'INSERT INTO happy (location, day, time, specials) VALUES ($1, $2, $3, $4);';
+      var items = [bar.location, bar.day, bar.time, bar.specials];
+      client.query(queryString, items, function (queryErr, resultObj) {
+        done();
+        if (queryErr) {
+          console.log(queryErr)
+          res.sendStatus(500);
+        } else {
+          
+          res.sendStatus(201);
+        }
+      });
+    }
+  })
+
+}); //end post
 
 module.exports = router;

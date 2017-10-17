@@ -6,9 +6,12 @@
 </div>
 
 <div>
-     <select selected="Select Day">
+     <!-- <select selected="Select Day">
     <option value="Select Day">Select Day</option>
     <option></option> 
-    </select>
-    <button class="btn btn-info">Search</button>
+    </select> -->
+    <button ng-click="uc.getHappy()" class="btn btn-info">Search</button>
+    <div ng-repeat="happy in uc.happyHour.list" class="container">
+            <p>{{happy}}</p>
+    </div>
 </div>

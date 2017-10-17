@@ -1,16 +1,16 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
   <div>
-    <input type="text" placeholder="Happy Hour Name">
+    <input type="text" placeholder="Happy Hour Name" ng-model="ic.locationIn">
   </div>
   <div>
-    <input type="text" placeholder="Days">
+    <input type="text" placeholder="Days" ng-model="ic.dayIn">
   </div> 
   <div>
-    <input type="text" placeholder="Hours">
+    <input type="text" placeholder="Hours" ng-model="ic.timeIn">
   </div>
   <div>
-    <input type="text" placeholder="Specials">
+    <input type="text" placeholder="Specials" ng-model="ic.specialsIn">
   </div>
-  <button class="btn btn-info">Post Happy Hour</button>
+  <button ng-click="ic.happyPost()" class="btn btn-info">Post Happy Hour</button>
 </div>
