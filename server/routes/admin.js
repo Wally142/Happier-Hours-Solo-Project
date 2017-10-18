@@ -28,7 +28,7 @@ router.delete('/:id', function (req, res) {
     pool.connect(function (conErr, client, done) {
         if (conErr) {
             console.log(conErr);
-            res.sendStatus(500);
+            res.sendStatus(404);
         } else {
             client.query('DELETE FROM happy WHERE id = $1;', [dbId], function (queryErr, result) {
                 done();
@@ -38,10 +38,40 @@ router.delete('/:id', function (req, res) {
                     res.sendStatus(202);
                 }
             });
-        }
-    }
-    )
+        };
+    });
 });//End router DELETE
+
+router.put('/:id', function (req, res) {
+    var dbId = req.params.id;
+    var happy = req.body.approved;
+    console.log('var dbId =', dbId);
+    console.log('var happy =', happy);
+
+    pool.connect(function (err, client, done) {
+        if (err) {
+            console.log('PUT connection error ->', err);
+            res.sendStatus(500);
+            done();
+        } else {
+            var queryString = "UPDATE happy SET approved=$2 WHERE id=$1";
+            var values = [dbId, happy];
+            client.query(queryString, values, function (queryErr, resObj) {
+                if (queryErr) {
+                    console.log('Query PUT Error ->', queryErr);
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(201);
+                } 
+                done();
+            }); 
+        } 
+    }); 
+}); // end PUT
+
+
+
+
 
 
 module.exports = router;

@@ -23,14 +23,14 @@
     </thead>
 
     <tbody id="approve">
-        <tr ng-repeat="happy in ic.happyHour.list">
+        <tr ng-repeat="happy in ic.happyHour.list" ng-value="happy.id">
 
             <td>{{happy.location}}</td>
             <td>{{happy.day}}</td>
             <td>{{happy.time}}</td>
             <td>{{happy.specials}}</td>
-            <td><button class="btn btn-info">Allow</button></td>
-            <td><button class="btn btn-danger">Remove</button></td>
+            <td><button ng-click="ic.update(happy.id, happy.approved)" class="btn btn-info">Allow</button></td>
+            <td><button ng-click="ic.delete(happy.id)" class="btn btn-danger">Remove</button></td>
 
         </tr>
     </tbody>

@@ -20,3 +20,4 @@
 -- 	user_id int REFERENCES users (id)
 -- 	);
 
+--INSERT INTO happy ("location", "day", "time", specials, approved) VALUES ('Applebees', 'M-F', '9pm-12am', 'half off apps', false);

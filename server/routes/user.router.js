@@ -36,7 +36,7 @@ router.get('/happy', function (req, res) {
       console.log(error);
       res.sendStatus(404);
     } else {
-      client.query('SELECT * FROM happy;', function (queryErr, resultObj) {
+      client.query('SELECT * FROM happy WHERE approved = true;', function (queryErr, resultObj) {
         done();
         if (queryErr) {
           console.log(queryErr)

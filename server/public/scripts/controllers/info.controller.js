@@ -28,9 +28,20 @@ myApp.controller('InfoController', function(UserService) {
     vm.dayIn = null;
     vm.timeIn = null;
     vm.specialsIn = null;
-  }// end happyPost
+  };// end happyPost
 
   vm.getHappy = function () {
-    UserService.getApproval();
+    UserService.getApproval();//GET that loads on admin page
+  };
+
+  vm.delete = function (id) {
+    UserService.deleteApproval(id);//delete happy hour request
+    vm.getHappy();
+  };
+
+  vm.update = function (id, status) {
+    UserService.updateHappyHour(id, status); //accepts happy hour request
+    vm.getHappy();
   }
-});
+
+});//end controller

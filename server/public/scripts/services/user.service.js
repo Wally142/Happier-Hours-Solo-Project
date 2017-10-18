@@ -55,8 +55,30 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
-  self.deleteApproval = function () {
+  self.deleteApproval = function (id) {
+    var thisId = id;
+    console.log('In Delete function');
+    $http({
+      method: 'DELETE',
+      url: '/admin/' + thisId
+    }).then(function (response) {
+      console.log('self.delete', response);
+    })
+  }// end delete function
 
+  self.updateHappyHour = function (id, status) {
+    var thisId = id;
+    var happyStatus = {
+      approved: status
+    }
+    console.log('in PUT service function');
+    $http({
+      method: 'PUT',
+      url: '/admin/' + thisId,
+      data: happyStatus
+    }).then(function (response) {
+      console.log('self.update', response);
+    });   
   }
 
 });//end service
