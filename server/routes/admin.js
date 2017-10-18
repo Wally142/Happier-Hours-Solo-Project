@@ -45,6 +45,10 @@ router.delete('/:id', function (req, res) {
 router.put('/:id', function (req, res) {
     var dbId = req.params.id;
     var happy = req.body.approved;
+    var newHappy = false;
+    if(happy === false) {
+        newHappy = true;
+    }
     console.log('var dbId =', dbId);
     console.log('var happy =', happy);
 
@@ -55,7 +59,7 @@ router.put('/:id', function (req, res) {
             done();
         } else {
             var queryString = "UPDATE happy SET approved=$2 WHERE id=$1";
-            var values = [dbId, happy];
+            var values = [dbId, newHappy];
             client.query(queryString, values, function (queryErr, resObj) {
                 if (queryErr) {
                     console.log('Query PUT Error ->', queryErr);
