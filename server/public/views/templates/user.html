@@ -2,16 +2,38 @@
 <div class="container">
 
     <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
-    <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
+  
 </div>
 
 <div>
-     <!-- <select selected="Select Day">
+    <!-- <select selected="Select Day">
     <option value="Select Day">Select Day</option>
     <option></option> 
     </select> -->
     <button ng-click="uc.getHappy()" class="btn btn-info">Search</button>
-    <div ng-repeat="happy in uc.happyHour.list" class="container">
-            <p>{{happy}}</p>
-    </div>
+   
+</div>
+</div>
+
+<table class="table-striped table table-hover">
+    <thead>
+        <tr>
+            <th class="head">Location</th>
+            <th class="head">Days</th>
+            <th class="head">Time</th>
+            <th class="head">Specials</th>
+
+        </tr>
+    </thead>
+
+    <tbody id="ViewHappy">
+        <tr ng-repeat="happy in uc.happyHour.list">
+
+            <td>{{happy.location}}</td>
+            <td>{{happy.day}}</td>
+            <td>{{happy.time}}</td>
+            <td>{{happy.specials}}</td>
+        </tr>
+    </tbody>
+</table>
 </div>

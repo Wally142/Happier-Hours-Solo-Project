@@ -11,6 +11,7 @@
 -- 	"Time" varchar (20),
 -- 	Specials varchar (300),
 -- 	"Comments" varchar (500),
+-- approved boolean default false
 -- 	);
 
 -- CREATE TABLE comments (

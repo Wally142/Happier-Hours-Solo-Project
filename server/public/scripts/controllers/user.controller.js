@@ -3,18 +3,7 @@ myApp.controller('UserController', function(UserService) {
   var vm = this;
   vm.userService = UserService;
   vm.userObject = UserService.userObject;
-  vm.happyHour = UserService.happyHour;
-
-//   vm.happyPost = function() {
-//     var newList = {
-//     Location : vm.locationIn,
-//     Day: vm.DayIn,
-//     Time: vm.TimeIn,
-//     Specials: vm.specialsIn
-//   };
-
-//   UserService.postHappy(newList);
-// }
+  vm.happyHour = UserService.happyHourTrue;
 
   vm.getHappy = function(){
     UserService.getHappy();

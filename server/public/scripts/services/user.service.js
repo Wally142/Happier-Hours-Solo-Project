@@ -3,8 +3,8 @@ myApp.service('UserService', function ($http, $location) {
   var self = this;
 
   self.userObject = {};
-  self.happyHour = { list: [] }
-  // self.addHappy = {}
+  self.happyHourTrue = { list: [] }
+  self.happyHourFalse = { list: [] }
 
   self.getuser = function () {
     console.log('UserService -- getuser');
@@ -33,7 +33,7 @@ myApp.service('UserService', function ($http, $location) {
     console.log('In getHappy');
     $http.get('/user/happy').then(function (response) {
       console.log(response);
-      self.happyHour.list = response.data;
+      self.happyHourTrue.list = response.data;
     })
   }
 
@@ -48,6 +48,17 @@ myApp.service('UserService', function ($http, $location) {
     })
   }
 
-});
+  self.getApproval = function () {
+    $http.get('/admin').then(function (response) {
+      console.log(response);
+      self.happyHourFalse.list = response.data;
+    });
+  }
+
+  self.deleteApproval = function () {
+
+  }
+
+});//end service
 
 
