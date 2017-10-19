@@ -6,6 +6,7 @@ myApp.service('UserService', function ($http, $location) {
   self.happyHourTrue = { list: [] }
   self.happyHourFalse = { list: [] }
 
+
   self.getuser = function () {
     console.log('UserService -- getuser');
     $http.get('/user').then(function (response) {
@@ -55,7 +56,7 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
-  self.deleteApproval = function (id) {
+  self.deleteApproval = function (id) { //delete happy hour request
     var thisId = id;
     console.log('In Delete function');
     $http({
@@ -66,7 +67,7 @@ myApp.service('UserService', function ($http, $location) {
     })
   }// end delete function
 
-  self.updateHappyHour = function (id, status) {
+  self.updateHappyHour = function (id, status) { //function to allow happy hour
     var thisId = id;
     var happyStatus = {
       approved: status
@@ -78,7 +79,32 @@ myApp.service('UserService', function ($http, $location) {
       data: happyStatus
     }).then(function (response) {
       console.log('self.update', response);
-    });   
+    });
+  };
+
+  self.getWeekdays = function () { //function for display Mon-Fri happy hours
+    $http.get('/search').then(function (response) {
+      console.log(response);
+      self.happyHourTrue.list = response.data;
+    });
+  };
+
+  self.getWeekend = function () { // function for display Sun-Sun happy hours
+    $http.get('/search/everyday').then(function (response) {
+      console.log(response);
+      self.happyHourTrue.list = response.data;
+    });
+  };
+
+  self.postComment = function (comments) {
+    console.log('Post comment');
+    $http({
+      method: 'POST',
+      url: '/comments',
+      data: comments
+    }).then(function (response) {
+      console.log('in service POST with', response);
+    })
   }
 
 });//end service

@@ -6,11 +6,14 @@
 </div>
 
 <div>
-    <!-- <select selected="Select Day">
-    <option value="Select Day">Select Day</option>
-    <option></option> 
-    </select> -->
-    <button ng-click="uc.getHappy()" class="btn btn-info">Search</button>
+    <select ng-model="uc.days"selected="Select Days">
+    <option value="clear">Select Day</option>
+    <option value="weekday">Monday-Friday</option> 
+    <option value="everyday">Everyday</option>
+    </select>
+    
+    <button ng-click="uc.getDay(uc.days)" class="btn btn-success">Search</button> 
+    <button ng-click="uc.getHappy()" class="btn btn-info">View All</button>
    
 </div>
 </div>
@@ -36,4 +39,10 @@
         </tr>
     </tbody>
 </table>
+</div>
+
+<div>
+    <h2>Comments</h2>
+    <input type="text" ng-model="uc.commentIn">
+    <button ng-click="uc.commentPost()" class="btn btn-primary">Post</button>
 </div>

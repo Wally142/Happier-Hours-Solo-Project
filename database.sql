@@ -10,9 +10,8 @@
 -- 	"Day" varchar (20),
 -- 	"Time" varchar (20),
 -- 	Specials varchar (300),
--- 	"Comments" varchar (500),
--- approved boolean default false
--- 	);
+
+-- approved boolean default false);
 
 -- CREATE TABLE comments (
 -- 	id serial primary key,
@@ -20,4 +19,4 @@
 -- 	user_id int REFERENCES users (id)
 -- 	);
 
---INSERT INTO happy ("location", "day", "time", specials, approved) VALUES ('Applebees', 'M-F', '9pm-12am', 'half off apps', false);
+
