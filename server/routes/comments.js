@@ -24,8 +24,28 @@ router.post('/', function (req, res) {
             });
         }
     })
-
 }); //end post
+
+router.get('/', function (req, res) {
+    console.log('comments.js route');
+    pool.connect(function (error, client, done) {
+        if (error) {
+            console.log(error);
+            res.sendStatus(404);
+        } else {
+            client.query('SELECT * FROM comments;', function (queryErr, resultObj) {
+                done();
+                if (queryErr) {
+                    console.log(queryErr)
+                    res.sendStatus(500);
+                } else {
+                    console.log(resultObj.rows);
+                    res.send(resultObj.rows);
+                }
+            });
+        }
+    });
+});// end GET
 
 
 

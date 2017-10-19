@@ -4,13 +4,11 @@ myApp.controller('UserController', function (UserService) {
   vm.userService = UserService;
   vm.userObject = UserService.userObject;
   vm.happyHour = UserService.happyHourTrue;
-
-
+  vm.happyComments = UserService.happyHourComments;
 
   vm.getHappy = function () {
     UserService.getHappy();
   }
-
 
   vm.getDay = function (day) {
     if (day === 'weekday') {
@@ -32,7 +30,12 @@ myApp.controller('UserController', function (UserService) {
 
     UserService.postComment(newComment);
     vm.commentIn = null;
+    UserService.getComments();
   };// end commentPost
+
+  vm.getComments = function () {
+    UserService.getComments();
+  }
 
 });// end controller
 
