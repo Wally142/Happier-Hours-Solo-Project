@@ -44,11 +44,10 @@
 <div>
     <h2>Comments</h2>
     <input type="text" ng-model="uc.commentIn">
-    <button ng-click="uc.commentPost()" class="btn btn-primary">Post</button>
-    <button ng-click="uc.getComments()" class="btn btn-primary">View</button>
+    <button ng-click="uc.commentPost()" class="btn btn-success">Post</button>
+    <button ng-click="uc.getComments()" class="btn btn-info">View</button>
 </div>
 <div ng-repeat="comment in uc.happyComments.list">
     <p>{{comment.comments}}</p>
-
-
 </div>
+
