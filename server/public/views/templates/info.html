@@ -1,17 +1,29 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
+<div class="form-group">
   <div>
-    <input type="text" placeholder="Happy Hour Name" ng-model="ic.locationIn">
+    <input id="local" type="text" placeholder="Happy Hour Name" ng-model="ic.locationIn">
   </div>
   <div>
-    <input type="text" placeholder="Days" ng-model="ic.dayIn">
-  </div> 
-  <div>
-    <input type="text" placeholder="Hours" ng-model="ic.timeIn">
+    <select class="days" ng-model="ic.dayIn" selected="clear">
+      <option value="">Select Days</option>
+      <option value="Mon-Fri">Monday-Friday</option>
+      <option value="Sun-Sun">Everyday</option>
+    </select>
   </div>
   <div>
-    <input type="text" placeholder="Specials" ng-model="ic.specialsIn">
-  </div>
-  <button ng-click="ic.happyPost()" class="btn btn-info">Post Happy Hour</button>
-</div>
+    <select class="timeIn" ng-model="ic.timeIn">
+      <option value="">Starts</option>
+      <option value="{{start}}" ng-repeat="start in ic.startTime">{{start}}</option>
 
+    </select>
+    <select class="timeOut" ng-model="ic.timeOut">
+      <option value="">Ends</option>
+      <option value="{{end}}" ng-repeat="end in ic.endTime">{{end}}</option>
+
+    </select>
+  </div>
+  <div>
+    <textarea class="special" type="text" placeholder="Specials" ng-model="ic.specialsIn"></textarea>
+  </div>
+  <button ng-click="ic.happyPost()" class="hello btn btn-info">Post Happy Hour</button>
+</div>

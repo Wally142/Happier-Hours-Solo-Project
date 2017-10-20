@@ -6,8 +6,8 @@
 </div>
 
 <div>
-    <select ng-model="uc.days"selected="Select Days">
-    <option value="clear">Select Day</option>
+    <select ng-model="uc.days"selected="clear">
+    <option value="">Select Day</option>
     <option value="weekday">Monday-Friday</option> 
     <option value="everyday">Everyday</option>
     </select>
@@ -43,7 +43,7 @@
 
 <div>
     <h2>Comments</h2>
-    <input type="text" ng-model="uc.commentIn">
+    <textarea type="text" ng-model="uc.commentIn"></textarea>
     <button ng-click="uc.commentPost()" class="btn btn-success">Post</button>
     <button ng-click="uc.getComments()" class="btn btn-info">View</button>
 </div>

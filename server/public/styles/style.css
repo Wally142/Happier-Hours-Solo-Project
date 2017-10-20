@@ -78,3 +78,37 @@ li a:hover {
   text-decoration: underline;
   color: #eee;
 }
+
+.days {
+  position: relative;
+  top:80px;
+}
+
+.hello {
+  position: relative;
+  top: 200px;
+}
+
+.special {
+  position: relative;
+  top: 160px;
+}
+
+.timeIn {
+  position: relative;
+  top: 120px;
+}
+
+.timeOut {
+  position: relative;
+  top: 120px;
+}
+
+#local {
+  position: relative;
+  top:40px;
+}
+
+.form-group {
+  text-align: center;
+}
