@@ -25,6 +25,7 @@
             <th class="head">Days</th>
             <th class="head">Time</th>
             <th class="head">Specials</th>
+            <th class="head">Comments</th>
 
         </tr>
     </thead>
@@ -32,22 +33,16 @@
     <tbody id="ViewHappy">
         <tr ng-repeat="happy in uc.happyHour.list">
 
-            <td>{{happy.location}}</td>
+            <td><a target="blank_" href="https://www.google.com/maps/dir/ + {{happy.location}}">{{happy.location}}</a></td>
             <td>{{happy.day}}</td>
             <td>{{happy.time}}</td>
             <td>{{happy.specials}}</td>
+            <td><input ng-value="{{happy.comment}}" ng-model="happy.comment" type="text"></td>
+            <td><button ng-click="uc.commentPost(happy.comment, happy.id); happy.comment= ''" class="btn btn-success">Post</button></td>
+            <td><button  ng-click="uc.getComments(happy.id)" class="btn btn-info">View</button></td>
         </tr>
     </tbody>
 </table>
 </div>
 
-<div>
-    <h2>Comments</h2>
-    <textarea type="text" ng-model="uc.commentIn"></textarea>
-    <button ng-click="uc.commentPost()" class="btn btn-success">Post</button>
-    <button ng-click="uc.getComments()" class="btn btn-info">View</button>
-</div>
-<div ng-repeat="comment in uc.happyComments.list">
-    <p>{{comment.comments}}</p>
-</div>
 

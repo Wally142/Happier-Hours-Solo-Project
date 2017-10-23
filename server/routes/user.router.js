@@ -66,7 +66,7 @@ router.post('/happy', function (req, res) {
           console.log(queryErr)
           res.sendStatus(500);
         } else {
-          
+
           res.sendStatus(201);
         }
       });

@@ -108,9 +108,9 @@ myApp.service('UserService', function ($http, $location) {
     });
   };
 
-  self.getComments = function () {
-    $http.get('/comments').then(function (response) {
-      console.log(response);
+  self.getComments = function (id) {
+    $http.get('/comments/'+ id).then(function (response) {
+      console.log('id', id);
       self.happyHourComments.list = response.data;
     });
   };

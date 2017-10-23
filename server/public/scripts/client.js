@@ -40,6 +40,15 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
+    .when('/barcomments', {
+      templateUrl: '/views/templates/barcomments.html',
+      controller: 'UserController as uc',
+      resolve: {
+        getuser: function (UserService) {
+          return UserService.getuser();
+        }
+      }
+    })
     .otherwise({
       redirectTo: 'home'
     });
