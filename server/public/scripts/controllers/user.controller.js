@@ -34,8 +34,13 @@ myApp.controller('UserController', function (UserService, $location) {
   };// end commentPost
 
   vm.getComments = function (id) {
-    UserService.getComments(id);
-    $location.path('/barcomments')
+    swal({
+      title: 'Happy Time!',
+      text: 'Here is what other people had to say!'
+    }).then(function () {
+      UserService.getComments(id);
+      $location.path('/barcomments')
+    });
   };
 
 });// end controller

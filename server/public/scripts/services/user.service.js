@@ -3,9 +3,9 @@ myApp.service('UserService', function ($http, $location) {
   var self = this;
 
   self.userObject = {};
-  self.happyHourTrue = { list : [] }
-  self.happyHourFalse = { list : [] }
-  self.happyHourComments = { list : []}
+  self.happyHourTrue = { list: [] }
+  self.happyHourFalse = { list: [] }
+  self.happyHourComments = { list: [] }
 
 
   self.getuser = function () {
@@ -109,13 +109,11 @@ myApp.service('UserService', function ($http, $location) {
   };
 
   self.getComments = function (id) {
-    $http.get('/comments/'+ id).then(function (response) {
+    $http.get('/comments/' + id).then(function (response) {
       console.log('id', id);
       self.happyHourComments.list = response.data;
     });
   };
-
-
 });//end service
 
 
