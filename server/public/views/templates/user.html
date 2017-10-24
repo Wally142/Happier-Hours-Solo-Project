@@ -2,19 +2,19 @@
 <div class="container">
 
     <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
-  
+
 </div>
 
 <div>
-    <select ng-model="uc.days"selected="clear">
-    <option value="">Select Day</option>
-    <option value="weekday">Monday-Friday</option> 
-    <option value="everyday">Everyday</option>
+    <select ng-model="uc.days" selected="clear">
+        <option value="">Select Day</option>
+        <option value="weekday">Monday-Friday</option>
+        <option value="everyday">Everyday</option>
     </select>
-    
-    <button ng-click="uc.getDay(uc.days)" class="btn btn-success">Search</button> 
-    <button ng-click="uc.getHappy()" class="btn btn-info">View All</button>
-   
+
+    <button ng-click="uc.getDay(uc.days)" class="btn btn-success">Search</button>
+    <button ng-click="uc.getHappy()" class="btn btn-primary">View All</button>
+
 </div>
 </div>
 
@@ -33,16 +33,27 @@
     <tbody id="ViewHappy">
         <tr ng-repeat="happy in uc.happyHour.list">
 
-            <td><a target="blank_" href="https://www.google.com/maps/dir/ + {{happy.location}}">{{happy.location}}</a></td>
+            <td>
+                <a target="blank_" href="https://www.google.com/maps/dir/ + {{happy.location}}">{{happy.location}}</a>
+            </td>
             <td>{{happy.day}}</td>
             <td>{{happy.time}}</td>
             <td>{{happy.specials}}</td>
-            <td><input ng-value="{{happy.comment}}" ng-model="happy.comment" type="text"></td>
-            <td><button ng-click="uc.commentPost(happy.comment, happy.id); happy.comment= ''" class="btn btn-success">Post</button></td>
-            <td><button  ng-click="uc.getComments(happy.id)" class="btn btn-info">View</button></td>
+            <td>
+                <input ng-value="{{happy.comment}}" ng-model="happy.comment" type="text">
+            </td>
+            <td>
+                <button ng-click="uc.commentPost(happy.comment, happy.id); happy.comment= ''" class="btn btn-success">
+
+                Post</button>
+            </td>
+            <td>
+                <button class="btn btn-primary" ng-click="uc.getComments(happy.id, happy.location)">
+
+                View</button>
+            </td>
+
         </tr>
     </tbody>
 </table>
 </div>
-
-

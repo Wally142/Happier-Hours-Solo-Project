@@ -1,7 +1,8 @@
 <div ng-include="'views/partials/nav.html'"></div>
+<div class="pic">
 <div class="form-group">
   <div>
-    <input id="local" type="text" placeholder="Happy Hour Name" ng-model="ic.locationIn">
+    <input id="local" name="search" type="text" placeholder="Happy Hour Name" ng-model="ic.locationIn">
   </div>
   <div>
     <select class="days" ng-model="ic.dayIn" selected="clear">
@@ -12,12 +13,12 @@
   </div>
   <div>
     <select class="timeIn" ng-model="ic.timeIn">
-      <option value="">Starts</option>
+      <option value="">Start Time</option>
       <option value="{{start}}" ng-repeat="start in ic.startTime">{{start}}</option>
 
     </select>
     <select class="timeOut" ng-model="ic.timeOut">
-      <option value="">Ends</option>
+      <option value="">End Time</option>
       <option value="{{end}}" ng-repeat="end in ic.endTime">{{end}}</option>
 
     </select>
@@ -25,7 +26,6 @@
   <div>
     <textarea class="special" type="text" placeholder="Specials" ng-model="ic.specialsIn"></textarea>
   </div>
-  <button ng-click="ic.happyPost()" class="hello btn btn-info">Post Happy Hour</button>
+  <button ng-click="ic.happyPost()" class="post btn btn-primary">Post Happy Hour</button>
 </div>
-
-<img class="hourImage" src="http://monkeycat.com/wp-content/uploads/auburn-ca-happy-hour.jpg">
+</div>

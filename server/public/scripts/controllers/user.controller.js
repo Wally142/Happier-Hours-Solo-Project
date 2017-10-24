@@ -5,6 +5,8 @@ myApp.controller('UserController', function (UserService, $location) {
   vm.userObject = UserService.userObject;
   vm.happyHour = UserService.happyHourTrue;
   vm.happyComments = UserService.happyHourComments;
+  
+  
 
   vm.getHappy = function () {
     UserService.getHappy();
@@ -24,22 +26,27 @@ myApp.controller('UserController', function (UserService, $location) {
   };// end display by day function
 
   vm.commentPost = function (comment, id) { // function for adding comments
+    swal({
+      title: 'Thank you!',
+      text: 'Your comments can now be viewed.',
+    })
     var newComment = {
       comments: comment,
       id: id
-
     };
-
     UserService.postComment(newComment);
   };// end commentPost
 
-  vm.getComments = function (id) {
+  vm.getComments = function (id, happy) {
     swal({
       title: 'Happy Time!',
       text: 'Here is what other people had to say!'
     }).then(function () {
+      console.log(happy);
+      UserService.bar = happy;
       UserService.getComments(id);
       $location.path('/barcomments')
+
     });
   };
 

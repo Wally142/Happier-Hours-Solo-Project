@@ -1,6 +1,14 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
+<h1 class="bar-comments text-center">Others Had This To Say about {{uc.userService.bar}}!</h1>
 
-<div ng-repeat="comment in uc.happyComments.list">
-    <p>{{comment.comments}}</p>
+<div class="jumbotron jumbo">
+    <div class="container">
+        
+
+        <div ng-repeat="comment in uc.happyComments.list">
+            
+            <p class="comments">{{comment.comments}}</p>
+        </div>
+    </div>
 </div>

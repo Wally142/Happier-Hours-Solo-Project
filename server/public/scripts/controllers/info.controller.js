@@ -16,6 +16,16 @@ myApp.controller('InfoController', function(UserService) {
   
   
   vm.happyPost = function () { // function for user adding happy hour
+    swal({
+      title: 'Happy Hour added!',
+      text: 'Your submission is currently under review, check back soon.',
+      imageUrl: 'http://www.smirnoff.com/en-us/wp-content/uploads/2014/10/DRINK-GRID-0013-Smirnoff-Moscow-Mule.jpg',
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: 'Custom image',
+      animation: false
+    });
+    
     var newList = {
       location: vm.locationIn,
       day: vm.dayIn,
