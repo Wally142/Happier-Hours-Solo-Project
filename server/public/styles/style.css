@@ -1,8 +1,9 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Comic Sans MS, Ebrima;
+  font-family: 'Open Sans',sans-serif;
   font-size: 14px;
+  
 }
 
 .instructions .container h1 {
@@ -11,9 +12,16 @@ body, html {
 }
 
 .instructions {
-  background: linear-gradient(to right, #283048, #859398);
+  background: linear-gradient(to left, #948e99,#2e1437);
   color: #DDDDDD;
   padding: 15px;
+}
+
+
+.navbar {
+  background: linear-gradient(to left, #948e99,#2e1437);
+  width: 100%;
+  border-radius: 0px;
 }
 
 #entryForm {
@@ -46,12 +54,6 @@ body, html {
 
 .btn-danger{
   margin-left: 10px;
-}
-
-.navbar {
-  background: linear-gradient(to right, #283048, #859398);
-  width: 100%;
-  border-radius: 0px;
 }
 
 ul {
@@ -185,12 +187,12 @@ li a:hover {
 }
 
 .bar-comments {
-  font-family: 'Roboto' sans-serif;
+  font-family: 'Open Sans',sans-serif;
   font-style: italic;
 }
 
 .comments {
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Open Sans',sans-serif; 
   color: #cb0000;
 }
 
@@ -203,4 +205,52 @@ li a:hover {
   background-size: cover;
 }
 
+.welcome {
+ color: #7b4383 ;
+}
 
+.table-striped tbody tr:hover td {
+    background-color: #c9bfd3;
+    
+}
+
+.search1 {
+  position: relative;
+  /* right: 75px; */
+  width: 280px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.btn-success {
+  background: #895a91 !important;
+  }
+
+  a {
+    font-size : 20px;
+  }
+
+  .tabletext {
+    font-size : 17px;
+    font-family: 'Open Sans',sans-serif;
+    
+  }
+
+  .head {
+    color: #895a91;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 18px;
+  }
+
+  .hh2 {
+    color: #7b4383 ;
+    font-family: 'Open Sans',sans-serif;
+  }
