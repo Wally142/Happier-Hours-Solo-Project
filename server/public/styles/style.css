@@ -185,12 +185,12 @@ li a:hover {
 }
 
 .bar-comments {
-  font-family: Comic Sans MS, Ebrima;
+  font-family: 'Roboto' sans-serif;
   font-style: italic;
 }
 
 .comments {
-  font-family: Comic Sans MS, Ebrima;
+  font-family: 'Roboto', sans-serif; 
   color: #cb0000;
 }
 

@@ -1,14 +1,18 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
 <h1 class="bar-comments text-center">Others Had This To Say about {{uc.userService.bar}}!</h1>
+<input ng-value="{{happy.comment}}" ng-model="happy.comment" type="text">
 
+<button ng-click="uc.commentPost(happy.comment); happy.comment= ''" class="btn btn-success">
+
+    Post</button>
 <div class="jumbotron jumbo">
     <div class="container">
-        
 
         <div ng-repeat="comment in uc.happyComments.list">
-            
+
             <p class="comments">{{comment.comments}}</p>
         </div>
     </div>
 </div>
+<div>

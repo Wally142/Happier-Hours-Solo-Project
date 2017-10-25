@@ -34,7 +34,7 @@
         <tr ng-repeat="happy in uc.happyHour.list">
 
             <td>
-                <a target="blank_" href="https://www.google.com/maps/dir/ + {{happy.location}}">{{happy.location}}</a>
+                <a ng-click="uc.getComments(happy.id, happy.location)">{{happy.location}}</a>
             </td>
             <td>{{happy.day}}</td>
             <td>{{happy.time}}</td>
@@ -47,11 +47,11 @@
 
                 Post</button>
             </td>
-            <td>
+            <!-- <td>
                 <button class="btn btn-primary" ng-click="uc.getComments(happy.id, happy.location)">
 
                 View</button>
-            </td>
+            </td> -->
 
         </tr>
     </tbody>
