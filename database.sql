@@ -13,10 +13,12 @@
 
 -- approved boolean default false);
 
--- CREATE TABLE comments (
--- 	id serial primary key,
--- 	"Comments" varchar (500),
--- 	user_id int REFERENCES users (id)
--- 	);
+--  CREATE TABLE comments (
+--   id serial primary key,
+--   "comments" varchar (500),
+--   user_id int REFERENCES users (id),
+--   location_id int REFERENCES happy (id)
+--   );
+
 
 

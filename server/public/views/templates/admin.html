@@ -18,6 +18,8 @@
             <th class="head">Days</th>
             <th class="head">Time</th>
             <th class="head">Specials</th>
+            <th class="head">Approve</th>
+            <th class="head">Reject</th>
 
         </tr>
     </thead>
@@ -29,8 +31,8 @@
             <td>{{happy.day}}</td>
             <td>{{happy.time}}</td>
             <td>{{happy.specials}}</td>
-            <td><button ng-click="ic.update(happy.id, happy.approved)" class="btn btn-info">Allow</button></td>
-            <td><button ng-click="ic.delete(happy.id)" class="btn btn-danger">Remove</button></td>
+            <td><button ng-click="ic.update(happy.id, happy.approved)" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span></button></td>
+            <td><button ng-click="ic.delete(happy.id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
 
         </tr>
     </tbody>

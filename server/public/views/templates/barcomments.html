@@ -1,13 +1,17 @@
 <div ng-include="'views/partials/nav.html'"></div>
+<div class ="pic1"></div>
+<h1 class="page-header bar-comments text-center">People Have This To Say About {{uc.userService.bar}}!</h1>
 
-<h1 class="bar-comments text-center">People Have This To Say About {{uc.userService.bar}}!</h1>
-<input ng-value="{{happy.comment}}" ng-model="happy.comment" type="text">
+<div class="text-center">
+    <input class="text-center input1" ng-value="{{happy.comment}}" placeholder="How was it?" ng-model="happy.comment" type="text">
 
-<button ng-click="uc.commentPost(happy.comment); happy.comment= ''" class="btn btn-success">
+    <button ng-click="uc.commentPost(happy.comment); happy.comment= ''" class="btn btn-primary input2">
 
-    Post Comment</button>
-<div class="jumbotron jumbo">
-    <div class="container">
+        Add Comment</button>
+</div>
+
+<div class="container-fluid">
+    <div class="jumbotron">
 
         <div ng-repeat="comment in uc.happyComments.list">
 
@@ -15,4 +19,5 @@
         </div>
     </div>
 </div>
-<div>
+
+    </div>
