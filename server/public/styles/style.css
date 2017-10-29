@@ -8,8 +8,9 @@ body, html {
 }
 
 .instructions .container h1 {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 600;
+  font-style: italic;
 }
 
 .instructions {
@@ -88,7 +89,7 @@ li a:hover {
   width: 280px;
   right: 75px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 2px solid #895a91;
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
@@ -113,7 +114,7 @@ li a:hover {
   right: 75px;
   width: 280px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 2px solid #895a91;
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
@@ -130,7 +131,7 @@ li a:hover {
   right: 75px;
   width: 140px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 2px solid #895a91;
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
@@ -147,7 +148,7 @@ li a:hover {
   width: 140px;
   right: 75px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 2px solid #895a91;
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
@@ -163,7 +164,7 @@ li a:hover {
   right: 75px;
   width: 280px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 2px solid #895a91;
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
@@ -250,7 +251,13 @@ li a:hover {
 }
 
   a {
-    font-size : 20px;
+    font-size : 19px;
+  }
+
+  #aa {
+    font-size : 32px;
+    position: relative;
+    left: 30px;
   }
 
   .tabletext {
@@ -299,3 +306,35 @@ li a:hover {
   bottom: 20px;
   background-size: cover;
 }
+
+.put1 {
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.put2 {
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.home {
+  color: #895a91;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 18px;
+}
+
+
