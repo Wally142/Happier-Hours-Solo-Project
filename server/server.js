@@ -13,7 +13,7 @@ var adminRouter = require('./routes/admin');
 var searchRouter = require('./routes/search');
 var commentRouter = require('./routes/comments');
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3000;
 
 // Body parser middleware
 app.use(bodyParser.json());

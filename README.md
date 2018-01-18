@@ -1,23 +1,15 @@
-# Name of Project
+# Happier Hours 
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+Happier Hours is a full stack project that allows users to view happy hours that have been added to the app, as well as the ability to add happy hours that enjoy and want others to be able to see. Users can also add comments about each location to let others know why it is a good place to visit for happy hour.  
 
 ## Built With
 
 List technologies and frameworks here
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
-
-
+- npm install
 ### Installing
 
 Steps to get the development environment running.
@@ -28,38 +20,49 @@ CREATE TABLE "users" (
   "username" varchar(80) not null UNIQUE,
   "password" varchar(240) not null
 );
+
+CREATE TABLE happy (
+	id serial primary key,
+	"Location" varchar (100) UNIQUE,
+	"Day" varchar (20),
+	"Time" varchar (20),
+	Specials varchar (300),
+approved boolean default false);
+
+ CREATE TABLE comments (
+  id serial primary key,
+  "comments" varchar (500),
+  user_id int REFERENCES users (id),
+  location_id int REFERENCES happy (id)
+  );
 ```
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
 
-## Documentation
 
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
+
 
 ### Completed Features
 
 High level list of items completed.
 
-- [x] Feature a
-- [x] Feature b
+- [x] Search for happy hours by weekday or weekend or all
+- [x] Add comments to each location
+- [x] Each location has a link out to google directions
+- [x] Ability to post a happy hour after admin approval
+- [x] Admin approval or rejection of submited happy hours
 
 ### Next Steps
 
-Features that you would like to add at some point in the future.
-
-- [ ] Feature c
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+- [ ] Ability to use googe places API as opposed to just google directions
+- [ ] Expand search ability and allow happy hours be searched by time, not just day
 
 ## Authors
 
-* Name of author(s)
+* Greg Wallerus
 
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+* Scott Bromander and Kris Szafranski for base passport code.

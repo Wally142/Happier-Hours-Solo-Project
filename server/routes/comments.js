@@ -11,31 +11,21 @@ router.post('/', function (req, res) {
         if (error) {
             console.log(error);
             res.sendStatus(404);
-        
-        // } else {
-        //     client.query('SELECT id AS "location_id" FROM happy', function (error, result) {
-        //         done();
-        //         if ;(error) {
-        //             console.log(error);
-        //             res.sendStatus(404)
+        } else {
+            var queryString = 'INSERT INTO comments (comments, user_id, location_id) VALUES ($1, $2, $3);';
+            var item = [text, userId, happy];
+            client.query(queryString, item, function (queryErr, resultObj) {
+                done();
+                if (queryErr) {
+                    console.log(queryErr)
+                    res.sendStatus(500);
                 } else {
-                    // var barId = result.rows[0].id;
-                    var queryString = 'INSERT INTO comments (comments, user_id, location_id) VALUES ($1, $2, $3);';
-                    var item = [text, userId, happy];
-                    client.query(queryString, item, function (queryErr, resultObj) {
-                        done();
-                        if (queryErr) {
-                            console.log(queryErr)
-                            res.sendStatus(500);
-                        } else {
 
-                            res.sendStatus(201);
-                        }
-                    });
+                    res.sendStatus(201);
                 }
             });
-        
-    
+        }
+    });
 });// end post
 
 
@@ -62,13 +52,5 @@ router.get('/:id', function (req, res) {
         }
     });
 });// end GET
-
-
-
-
-
-
-
-
 
 module.exports = router;

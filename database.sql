@@ -10,7 +10,6 @@
 -- 	"Day" varchar (20),
 -- 	"Time" varchar (20),
 -- 	Specials varchar (300),
-
 -- approved boolean default false);
 
 --  CREATE TABLE comments (
