@@ -1,14 +1,17 @@
 # Happier Hours 
+https://solo-project.herokuapp.com/
 
 Happier Hours is a full stack project that allows users to view happy hours that have been added to the app, as well as the ability to add happy hours that enjoy and want others to be able to see. Users can also add comments about each location to let others know why it is a good place to visit for happy hour.  
 
 ## Built With
 
-List technologies and frameworks here
+HTML 5, CSS 3, Bootstrap, JavaScript, AngularJS, Posgres SQL, Express.js,
+node.js
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
+- [Postico](https://eggerapps.at/postico/)
 - npm install
 ### Installing
 
@@ -36,13 +39,7 @@ approved boolean default false);
   location_id int REFERENCES happy (id)
   );
 ```
-
-## Screen Shot
-
-
-
-
-
+<!-- ## Screen Shot -->
 ### Completed Features
 
 High level list of items completed.
