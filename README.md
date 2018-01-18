@@ -25,12 +25,12 @@ CREATE TABLE "users" (
 );
 
 CREATE TABLE happy (
-	id serial primary key,
-	"Location" varchar (100) UNIQUE,
-	"Day" varchar (20),
-	"Time" varchar (20),
-	Specials varchar (300),
-approved boolean default false);
+  id serial primary key,
+  "Location" varchar (100) UNIQUE,
+  "Day" varchar (20),
+  "Time" varchar (20),
+  Specials varchar (300),
+  approved boolean default false);
 
  CREATE TABLE comments (
   id serial primary key,
